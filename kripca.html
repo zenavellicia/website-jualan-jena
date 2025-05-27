@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SSHARK FOOD</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    .twitter-button {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 20px;
+      padding: 8px 12px;
+      text-decoration: none;
+      gap: 8px;
+    }
+    .shopee-button {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 20px;
+      padding: 8px 12px;
+      text-decoration: none;
+      gap: 8px;
+    }
+    .tiktok-button {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 20px;
+      padding: 8px 12px;
+      text-decoration: none;
+      gap: 8px;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #dcbfbf;
+    }
+    h1 {
+      color: #000000;
+      text-align: center;
+    }
+    .container {
+      display: flex;
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+    .icon {
+      width: 50px;
+      height: 50px;
+    }
+    .products {
+      flex: 3;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .cart {
+      flex: 1;
+      background-color: #f48c85;
+      padding: 20px;
+      border-radius: 5px;
+      position: sticky;
+      top: 100px;
+      left: 50px;
+      height: fit-content;
+      border: 1px solid rgb(134, 100, 85);
+    }
+    .product-card {
+      border: 1px solid #ddd;
+      padding: 15px;
+      border-radius: 5px;
+      background-color: #f9c6c3;
+      box-shadow: 5px 10px 5px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .product-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+    button {
+      background-color: #f98b8b;
+      color: rgb(139, 107, 107);
+      border: none;
+      padding: 8px 12px;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    button:hover {
+      opacity: 0.5;
+    }
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="bg-white flex items-center justify-between px-4 sm:px-10 py-4">
+    <div class="flex items-center gap-1">
+    <a href="https://shopee.co.id/alzenavellicia07_" target="_blank" class="shopee-button">
+      <img src="https://i.pinimg.com/736x/ac/df/53/acdf538470ef9d58889cea6ffc04528c.jpg" alt="shopee" class="icon" />
+    </a>
+    </div>
+    <div class="text-2xl font-bold tracking-wide">SSHARK FOOD</div>
+    <ul class="hidden sm:flex space-x-8 font-semibold text-gray-700 text-xl">
+      <li class="border-b-2 border-black pb-1"><a href="#home">HOME</a></li>
+      <li><a href="#Menu">MENU</a></li>
+      <li><a href="#Testie">TESTIMONY</a></li>
+    </ul>
+    <div class="hidden sm:flex items-center space-x-6 text-gray-700 text-lg">
+      <button class="bg-[#e09b92] text-white rounded-full px-5 py-2 text-sm font-semibold hover:bg-[#d88a82] transition">
+        <a href="https://www.instagram.com/s.shark_food?igsh=MTdwY2N2dXp4dTkwNA==">INSTAGRAM</a>
+      </button>
+    </div>
+  </nav>
+
+  <section id="home" class="bg-[#e6d4d1] flex flex-col sm:flex-row items-center justify-center px-4 sm:px-10 py-10 sm:py-20 gap-6 sm:gap-0">
+    <img src="https://i.ibb.co.com/RpdtGCJP/IMG-20250414-WA0025-removebg-preview.png" alt="produk" class="w-500 sm:w-28 object-contain" />
+    <div class="absolute top-[500px] left-1/2 -translate-x-1/2 sm:static sm:translate-x-0 sm:ml-10 text-center sm:text-left max-w-xs sm:max-w-md">
+      <div class="text-xs text-[#451518] mb-1">SSHARK FOOD</div>
+      <h1 class="text-2xl sm:text-3xl font-extrabold leading-tight text-black">
+        Unik buat kado<br />Asyik buat ngemil
+      </h1>
+      <button class="mt-4 bg-[#e09b92] text-white rounded-full px-6 py-2 text-sm font-semibold hover:bg-[#d88a82] transition">
+        <a href="https://wa.me/6285106976664?text=Permisi%20kakk%20kripca/towelcake%20nya%20masih%20ready%20ngga%20yaa??">BELI SEKARANG</a>
+      </button>
+    </div>
+  </section>
+
+  <section id="Menu" class="bg-white py-8 px-4 sm:px-10">
+    <h1 class="text-center font-semibold mb-10 text-black">MENU</h1>
+    <div class="container">
+      <div class="products" id="product-list"></div>
+      <div class="cart font-semibold mb-10 text-white">
+        <h2>Keranjang Belanja</h2>
+        <div id="cart-items">
+          <p>Keranjang kosong</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="Testie" class="max-w-6xl mx-auto px-4 sm:px-10 py-10 grid grid-cols-1 sm:grid-cols-3 gap-6 bg-[#ac5b67]">
+    <div class="border border-gray-200 shadow-sm">
+      <img class="mx-auto" src="https://i.pinimg.com/736x/90/8f/38/908f38c6573a5df12865e10f8f8e939c.jpg" width="400" height="250" />
+      <div class="p-4 text-center">
+        <h4 class="font-semibold text-white mb-1">TESTIMONI 1</h4>
+        <p class="text-xs text-gray-100 mb-1">18 April 2025</p>
+        <p class="text-xs text-gray-100">Towel Cake Mangga</p>
+      </div>
+    </div>
+    <div class="border border-gray-200 shadow-sm">
+      <img src="https://i.pinimg.com/736x/3e/e3/e6/3ee3e66b982912debadd12256ca518c6.jpg" class="w-full object-cover" width="400" height="250" />
+      <div class="p-4 text-center">
+        <h4 class="font-semibold text-white mb-1">TESTIMONI 2</h4>
+        <p class="text-xs text-gray-100 mb-1">5 Mei 2025</p>
+        <p class="text-xs text-gray-100">Keripik Kaca</p>
+      </div>
+    </div>
+    <div class="border border-gray-200 shadow-sm">
+      <img src="https://i.pinimg.com/736x/44/83/dc/4483dcdb8e58e85e6dae65c73e62be1b.jpg" class="w-full object-cover" width="400" height="250" />
+      <div class="p-4 text-center">
+        <h4 class="font-semibold text-white  mb-1">TESTIMONI 3</h4>
+        <p class="text-xs text-gray-100 mb-1">18 April 2025</p>
+        <p class="text-xs text-gray-100">Towel Cake Stroberi</p>
+      </div>
+    </div>
+  </section>
+  <footer class="bg-pink-200 text-center py-4">
+  <div class="flex justify-center gap-4 mb-2">
+    <a href="https://www.tiktok.com/@s.shark_food?_t=ZS-8wCQKbWlehW&_r=1"><img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" alt="tiktok" class="w-8 h-8"></a>
+    <a href="https://x.com/AqilaZeara89314/status/1915601500405194938?t=S-SbYxPOohXnB2h9vJzABg&s=19"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="x" class="w-8 h-8"></a>
+    <a href="https://www.facebook.com/share/18mNdKoJZW/?mibextid=wwXIfr"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="facebook" class="w-8 h-8"></a>
+    <a href="https://pin.it/5yTbInEVA"><img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Pinterest-logo.png?20160129083321" alt="Pinterest" class="w-8 h-8"></a>
+  </div>
+  <p class="text-gray-700">&copy; 2024 SSHARK FOOD. All rights reserved.</p>
+</footer>
+  <script>
+    const product = [
+      { id: "1", name: "TOWEL CAKE MANGGA", image: "https://i.pinimg.com/736x/9d/6d/98/9d6d98170f52ee5e7749c697e4c76b68.jpg", price: 13000 },
+      { id: "2", name: "TOWEL CAKE STROBERI", image: "https://i.pinimg.com/736x/49/7c/c7/497cc7f0d409e2f85424721e1fbdd263.jpg", price: 13000 },
+      { id: "3", name: "TOWEL CAKE DURIAN", image: "https://i.pinimg.com/736x/b9/c7/a2/b9c7a278956e5afc9c94b2e532b708ca.jpg", price: 18000 },
+      { id: "4", name: "KERIPIK KACA PEDAS", image: "https://i.pinimg.com/736x/ef/48/da/ef48da492daaa4ec8a2e78dbb4e3af50.jpg", price: 5000 },
+      { id: "5", name: "KERIPIK KACA ORIGINAL", image: "https://down-id.img.susercontent.com/file/b480aa801e8320be788d84b176061a60", price: 5000 },
+    ];
+
+    const productlist = document.getElementById("product-list");
+    product.forEach(function(product){
+      const divCard = document.createElement("div");
+      divCard.className = "product-card";
+      divCard.innerHTML = `
+        <img src="${product.image}" />
+        <h1>${product.name}</h1>
+        <p>Harga : Rp.${product.price}</p>
+        <div class="flex justify-center mt-2">
+          <button 
+            onclick="tambahkeranjang(${product.id})" 
+            class="bg-[#f98b8b] hover:opacity-75 text-white font-semibold py-2 px-4 rounded">
+            Masukan ke Keranjang
+          </button>
+        </div>
+      `;
+      productlist.append(divCard);
+    });
+
+    let cart = [];
+
+    function tambahkeranjang(id) {
+      let produk = product.find((p) => p.id == id);
+      let item = cart.find((c) => c.id == id);
+      if (item) {
+        item.qty++;
+      } else {
+        cart.push({ ...produk, qty: 1 });
+      }
+      renderCart();
+    }
+
+    function renderCart() {
+      let cartDiv = document.getElementById("cart-items");
+      cartDiv.innerHTML = "";
+      let total = 0;
+      cart.forEach(item => {
+        const itemTotal = item.price * item.qty;
+        total += itemTotal;
+        cartDiv.innerHTML += `
+          <p>${item.name}</p>
+          <p>${item.price.toLocaleString()} x ${item.qty}</p>
+          <p>Total : ${itemTotal.toLocaleString()}</p>
+          <hr />
+        `;
+      });
+      if (cart.length > 0) {
+        cartDiv.innerHTML += `
+          <button onclick="checkoutKeWa()" style="background-color:white;color:#f98b8b;padding:8px 12px;border:none;border-radius:4px;margin-top:10px;font-weight:bold;">Checkout Via WA</button>
+        `;
+      } else {
+        cartDiv.innerHTML = "<p>Keranjang kosong</p>";
+      }
+    }
+
+    function checkoutKeWa() {
+      let pesan = "Halo kak, aku mau order:%0A";
+      let total = 0;
+      cart.forEach(item => {
+        let itemTotal = item.qty * item.price;
+        total += itemTotal;
+        pesan += `${item.name} - ${item.qty}x = Rp.${itemTotal.toLocaleString()}%0A`;
+      });
+      pesan += `%0A*Total: Rp.${total.toLocaleString()}*%0A%0ATerima kasih!`;
+      window.open("https://wa.me/6285106976664?text=" + pesan, "_blank");
+    }
+  </script>
+</body>
+</html>
