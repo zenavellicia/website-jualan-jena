@@ -261,7 +261,8 @@
         total += itemTotal;
         pesan += `${item.name} - ${item.qty}x = Rp.${itemTotal.toLocaleString()}%0A`;
       });
-      pesan += `%0A*Total: Rp.${total.toLocaleString()}*%0A%0ATerima kasih!`;
+      pesan += `%0A*Total: Rp.${total.toLocaleString()}*%0A*note: pembayaran hanya bisa via cod,mohon siapkan
+      uang cash*%0ATerima kasih!`;
       window.open("https://wa.me/6285106976664?text=" + pesan, "_blank");
     }
   </script>
